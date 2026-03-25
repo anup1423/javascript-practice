@@ -22,9 +22,10 @@ It includes basic concepts, DOM manipulation, and mini projects.
 
 ## Folder Structure
 
-basics → Core JavaScript concepts  
-dom → DOM manipulation examples  
+Basics → Core JavaScript concepts  
+DOM → DOM manipulation examples  
 projects → Mini projects  
+Functions -> Anonymous and Advance Functions 
 
 ## Author
 
