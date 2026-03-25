@@ -1,0 +1,80 @@
+<!-- very important what happens when page reloads  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>pratice Exercise</title>
+    <style>
+       #btn{
+          height:50px;
+          width: 50px;
+          font-size: 20px;
+          border-radius: 5px;
+          border: none;
+       }
+       .js-odd{
+        background-color: aqua;
+       }
+       .js-even{
+        background-color: antiquewhite;
+       }
+    </style>
+</head>
+<body>
+    <h3 id="greeting"></h3>
+    <button id="btn"onclick="CountClick()";>0</button>
+
+    <script>
+      let count=JSON.parse(localStorage.getItem('count'))|| 0;
+      let btn=document.querySelector('#btn');
+      updatebutton();
+        function CountClick(){
+        let clickCount=document.querySelector('#btn') ;
+        count++;
+        clickCount.innerText=count;
+        if(count%2==0){
+         clickCount.classList.add('js-even');
+          clickCount.classList.remove('js-odd');
+        }
+        else{
+            clickCount.classList.add('js-odd');
+            clickCount.classList.remove('js-even');
+        }
+        saveCount();
+       
+        }
+
+        function  updatebutton(){
+           btn.innerText=count;
+           if(count%2==0){
+          btn.classList.add('js-even');
+          btn.classList.remove('js-odd');
+        }
+        else{
+          btn.classList.add('js-odd');
+          btn.classList.remove('js-even');
+        }
+        }
+        function saveCount(){
+            localStorage.setItem('count',JSON.stringify(count));
+        }
+
+
+        function doGreeting(name='Dear'){
+        let mydate=new Date();   
+        let currrentHour=mydate.getHours();
+        let heading=document.querySelector('#greeting');
+        if(currrentHour>0 && currrentHour<12){
+            heading.innerText=`good morning ${name}`
+        }
+        else if(currrentHour>=12 && currrentHour<18){
+            heading.innerText=`Good Evening ${name}`;
+        }
+        else{
+           heading.innerText=`Good Night ${name}`;
+        }
+    }
+    doGreeting("Anup prjapati");
+     
+    </script>
+</body>
+</html>

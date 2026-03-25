@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>pratice set</title>
+</head>
+<body>
+    <script>
+        let name='Myntra cart Amount';
+        console.log(name);
+        document.body.innerHTML=name;
+        //cost of myntra Bag.
+        let jeans_original_price=2499;
+        let discount_onjeans=(2499*41/100);
+        
+        let bag_original_price=15599;
+        let discount_onbag=(15599*10/100);
+
+        let total_coupon_discount=29+272;
+        let total_MRP=(jeans_original_price + bag_original_price)-(discount_onjeans + discount_onbag)-(total_coupon_discount);
+        let additional_charges=25+20;
+        let total_cart_price=total_MRP+additional_charges;
+        console.log(Math.round(total_cart_price));
+
+        console.log(eval('2+5-4*3'))//eval treats string as constants and evaluates them.
+    </script>
+</body>
+</html>

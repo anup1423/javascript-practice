@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Advance Functions </title>
+</head>
+<body>
+    <button id="my-button">Click me </button>
+    <script>
+          let buttonElement=document.querySelector('#my-button');
+          let behaviour= (event) => console.log("I am clicked");//Browser creates an object.That object(event) stores info about what happened
+        //   let event = {
+        //     type: "submit",
+        //     target: "form",
+        //     preventDefault: function () {
+        //         console.log("Default stopped");
+        //     }
+        //   };
+          buttonElement.addEventListener('click',behaviour);
+
+         let printDate= () => (console.log( new Date));
+         buttonElement.addEventListener('click',printDate);
+
+//         let buttonElement=document.querySelector('#my-button');
+//         buttonElement.addEventListener('click',event/*or()*/ => console.log('I am Clicked'));
+//     </script>
+   </body>
+ </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        let cloth={
+            brand:'H&M',
+            price:1200,
+            Quality:'Good',
+            rating:4,
+            'Item-name':'T-shirt',
+
+        };
+        console.log(cloth.price);
+        console.log(cloth.rating);
+        console.log(typeof cloth);
+        //console.log(cloth.item-name); Wrong way
+        //Useful for properties with special characters product[”nick-name"].
+        console.log(cloth['Item-name']);
+        delete(cloth.rating);
+        console.log(cloth);
+
+
+    </script>
+    
+</body>
+</html>

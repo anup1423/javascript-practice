@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Function as object property</title>
+</head>
+<body>
+    <script>
+        let product={
+           companya:'Mango',
+           itemName:'Cotton Striped t-shirt',
+           price:1000,
+                rating:{
+                stars:4.5,
+                noOfReviews:90,      
+           },
+           displayPrice: function(){
+            return `${this.price.toFixed(2)}`;
+            //.toFixed() return the value upto 2 decimal places.
+           }
+        };
+        console.log(product.displayPrice());
+        console.log(product.company);
+    </script>
+</body>
+</html>

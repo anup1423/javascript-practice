@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>For Each Loop</title>
+</head>
+<body>
+    <script>
+        let arr=[1,2,3,4,5,6,7];
+        arr.forEach(function(i){
+            console.log(i);
+        })
+
+      //  arr.forEach( i => console.log(i)); Short Form .
+
+      function searchElement(arr,num){
+        for(let i=0;i<arr.length;i++){
+           if(arr[i]==num){
+             console.log(`Element is Found At the index ${i}`);
+             return;
+           }
+        }
+        console.log('Element not Found');
+      }
+      searchElement(arr,3);
+    //BIG limitation of forEach ❌ (VERY IMPORTANT)
+
+    // 👉 You CANNOT stop forEach once it starts.
+     
+     arr.forEach((i) =>{
+       if(i==5) return;
+       else console.log(`Visited: ${i}`);
+     }
+    )
+    //5 is skipped It works as continue statement.For the use of for-each loop is Limited.
+    </script>
+</body>
+</html>

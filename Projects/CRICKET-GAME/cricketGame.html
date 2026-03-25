@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cricket Game</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        img{
+            height:80px;
+            width: 80px;
+        }
+        #re-start{
+            background-color: antiquewhite;
+            font-size: 25px;
+            border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+   <img src="Images/Bat.jpg" alt="Bat Image" onclick="playgame('Bat') ">
+   <img src="images/ball.png" alt="Ball Image" onclick="playgame('Ball') ">
+   <img src="images/stump.jpg" alt="Stump Image" onclick="playgame('Stump') "><br>
+   
+
+   <h3 id="user-choice"></h3>
+   <h3 id="computer-choice"></h3>
+   <h3 id="result"></h3>
+   <h3 id="Score"></h3>
+   <h3 id="total-score"></h3>
+   <button id="re-start" onclick="restart()">Reset</button>
+
+    <script>
+     let score;
+     let storedScore=localStorage.getItem('score');
+     if(storedScore!=null){
+        score=JSON.parse(storedScore);
+     }
+     else{
+      score={
+        win:0,
+        tie:0,
+        loss:0,
+           };
+     }             
+    // score.displayScore=function(){
+    //        return ` You Won: ${score.win} ,
+    //          You Loss:${score.loss},
+    //          Tie:${score.tie},
+    //          Total score is ${score.win-score.loss}`;
+    //   };
+
+      let randomnumber;
+      function random_choice(){
+         randomnumber=Math.random()*3;
+         if(randomnumber<=1)
+             return 'Bat';
+          else if(randomnumber<=2)
+             return 'Ball';
+          else 
+             return 'Stump';
+      }
+
+      function getResult(user,computer){
+         if(user===computer){
+          score.tie++;
+          return `It's tie`;
+         }
+         else if((user==='Bat' && computer==='Ball') || (user==='Ball' && computer==='Stump')
+         || (user==='Stump' && computer==='Bat')){
+                score.win++;
+                return 'You Won';
+            }
+            else {
+                score.loss++;
+               return 'Computer Won.'
+            };
+      }
+      function playgame(userChoice){
+         const computerChoice=random_choice();
+         //console.log(`computer choice is ${computerChoice}`);
+         const resultMsg=getResult(userChoice,computerChoice);
+
+        localStorage.setItem('score',JSON.stringify(score));
+       
+        document.querySelector('#user-choice').innerText=`You have choosen ${userChoice}`;
+        document.querySelector('#computer-choice').innerText=`computer have choosen ${computerChoice}`;
+        document.querySelector('#result').innerText=` ${resultMsg}`;
+        document.querySelector('#Score').innerText=`Score: Won:${score.win} Lost:${score.loss} Tie:${score.tie}`;
+        document.querySelector('#total-score').innerText=`Total score is ${score.win-score.loss}`;
+      }
+       function restart(){
+              localStorage.removeItem('score');
+              score.win=0;
+              score.loss=0;
+              score.tie=0;
+                document.querySelector('#user-choice').innerText='';
+                document.querySelector('#computer-choice').innerText='';
+                document.querySelector('#result').innerText=` Game Reset `;
+                document.querySelector('#Score').innerText=`Score: Won:${score.win} Lost:${score.loss} Tie:${score.tie}`;
+                document.querySelector('#total-score').innerText=`Total score is ${score.win-score.loss}`;
+       }
+    </script>
+</body>
+</html>

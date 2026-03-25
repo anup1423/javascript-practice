@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Anonymous Function</title>
+</head>
+<body>
+    <script>
+    // let alarm=function(){
+    //     console.log('Subah ho gyi,uth jao');
+    // }   
+    // setTimeout(alarm,2000);
+    // console.log('This is printed before setTimeout Function')
+
+// setTimeout(
+//     () => console.log('Subah ho gyi,uth jao'),3000) ;
+     
+//     console.log('Alarm set');
+   
+      let alarm= () => console.log('Subah ho gyi,uth jao');
+      let TimerId = setTimeout(alarm,4000);
+      console.log(`Alram set with TImerId ${TimerId}`);
+      clearTimeout(TimerId);//Now setTimeout Function will not be called .
+      let intervalId=setInterval(alarm,1000);
+      //clearInterval(intervalId);
+      setTimeout( () => (clearInterval(intervalId)),3000);//This is also a way to clear setInterval.
+    </script>
+</body>
+</html>

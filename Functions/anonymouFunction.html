@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Anonymous FUnction</title>
+</head>
+<body>
+    <script>
+        //Arrow Function
+        let sum=(num1,num2) =>{
+            return num1+num2;
+        }
+        console.log(sum(7,9));
+        
+        // let square=(num) =>{
+        //     return num*num;
+        // }
+       //console.log(square(10));
+
+       //For single parameter round brackets are optional.
+       //For single line curly braces and return optional
+       //so above can be written as
+         let square = num =>  num * num;
+           console.log(square(10));  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //     let sum=function(num1,num2){
+    //       return num1 + num2;
+    //     }
+    // let hello=sum;
+    // console.log(sum(6,7));
+    // console.log(hello(3,4))
+    
+    // let sumofThreeNumbers=function(num1,num2,num3,sumTwoNumbers){
+    //     let sum1=sumTwoNumbers(num1,num2);
+    //     return sumTwoNumbers(sum1,num3);
+    // }
+    // console.log(sumofThreeNumbers(4,5,6,sum));
+    // console.log(sumofThreeNumbers);
+    // console.log(typeof sumofThreeNumbers);
+    </script>
+</body>
+</html>

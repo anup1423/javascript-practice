@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object References</title>
+</head>
+<body>
+    <script>
+         let cloth={
+            brand:'H&M',
+            price:1200,
+            Quality:'Good',
+            rating:4,
+            'Item-name':'T-shirt',
+        };
+        let object2=cloth;
+        console.log(object2.rating);//4
+        cloth.rating=5;
+        console.log(object2.rating);//5
+        console.log(cloth===object2);//true
+        //creating an object with same attribute as above
+           let cloth1={
+            brand:'H&M',
+            price:1200,
+            Quality:'Good',
+            rating:4,
+            'Item-name':'T-shirt',
+        };
+        console.log(cloth===cloth1);//false because you are comparing referances not content
+        //Actual comparison between two object is like comparing each attribute of both the objects.
+    </script>
+</body>
+</html>

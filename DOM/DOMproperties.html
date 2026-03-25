@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Properties Demo</title>
+    <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading">DOM Properties Example</h1>
+
+    <p id="info">This is a paragraph.</p>
+
+    <a id="myLink" href="https://google.com">Visit Google</a>
+    <br><br>
+
+    <button onclick="demo()">Click Me</button>
+
+    <script>
+        function demo() {
+
+            /* 1. location */
+            console.log("Full URL:", location.href);
+
+            /* 2. title */
+            document.title = "Title Changed Using JS";
+
+            /* 3. href */
+            document.getElementById("myLink").href = "https://github.com";
+
+            /* 4. domain */
+            console.log("Domain Name:", document.domain);
+
+            /* 5. innerHTML */
+            document.getElementById("info").innerHTML =
+                "<b>Paragraph changed using innerHTML</b>";
+
+            /* 6. innerText */
+            document.getElementById("heading").innerText =
+                "<i>Heading changed using innerText</i>";
+
+            /* 7. classList */
+            document.getElementById("info").classList.add("highlight");
+        }
+    </script>
+
+</body>
+</html>

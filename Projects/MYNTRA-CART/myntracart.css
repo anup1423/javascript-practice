@@ -1,0 +1,14 @@
+.bag{
+    padding: 2px 25px;
+    border-radius: 15px;
+    background-color:lightgreen ;
+    border: none;
+    font-size: 20px;
+}
+#wish-list{
+    padding: 5px 35px;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-transform:uppercase;
+    font-size: 15px;
+}

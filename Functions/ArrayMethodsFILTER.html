@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array Methods</title>
+</head>
+<body>
+    <script>
+        let arr=[1,2,3,4,5,6,7,8,9,10];
+        //Arrow functions with {} are required when you use if–else.
+        let odds=arr.filter((num,index) => {
+            if(num%2 ===1){
+                return true;
+            }
+            else {
+                return false;
+            }
+        });
+        console.log(odds);
+    </script>
+</body>
+</html>
